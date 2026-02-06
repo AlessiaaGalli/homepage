@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videomaking – Alessia Galli</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            background-color: #1a0000;
+            font-family: 'Poppins', sans-serif;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 20px 30px;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(26, 0, 0, 0.65);
+            backdrop-filter: blur(6px);
+            box-sizing: border-box;
+        }
+
+        .left-block {
+            display: flex;
+            align-items: center;
+        }
+
+        .left-block img {
+            height: 28px;
+            margin-right: 12px;
+        }
+
+        .text-block {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+            width: 6cm;
+        }
+
+        .name {
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .subtitle {
+            font-size: 0.75rem;
+            font-weight: 300;
+            margin-top: 2px;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .navbar > a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.75rem;
+            font-weight: 300;
+            transition: 0.2s ease;
+        }
+
+        .navbar > a:hover {
+            color: #ffcccc;
+        }
+
+        .contacts-wrapper {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .contacts-wrapper > a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.75rem;
+            font-weight: 300;
+        }
+
+        .contacts-wrapper > a:hover {
+            color: #ffcccc;
+        }
+
+        .contacts-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            padding-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            opacity: 0;
+            transform: translateY(-6px);
+            pointer-events: none;
+            transition: opacity 0.25s ease, transform 0.25s ease;
+            text-align: right;
+        }
+
+        .contacts-wrapper:hover .contacts-dropdown {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .contact-item {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            font-size: 0.75rem;
+            gap: 8px;
+        }
+
+        .contact-item img {
+            height: 14px;
+            opacity: 0.8;
+        }
+
+        .full-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .full-link:hover {
+            opacity: 0.8;
+        }
+
+        .page-wrapper {
+            padding: 40px;
+            padding-top: 140px;
+            box-sizing: border-box;
+        }
+
+        .page-title {
+            width: 6cm;
+            margin-left: 40px;
+            margin-bottom: 40px;
+        }
+
+        .page-title h1 {
+            font-size: 1.8rem;
+            margin: 0 0 10px 0;
+        }
+
+        .page-title p {
+            line-height: 1.5;
+        }
+
+        .video-section {
+            width: 100%;
+            padding: 40px;
+            padding-top: 20px;
+            box-sizing: border-box;
+
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
+        }
+
+        
+        .video-section iframe {
+            width: 40%;
+            max-width: 500px;
+            height: 280px;
+            margin-left: 40px;
+            border: none;
+        }
+
+        .video-text {
+            width: 6cm;
+            margin-top: 10px;
+        }
+
+        .video-text h2 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .video-text p {
+            line-height: 1.5;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="left-block">
+            <img src="logo.png" alt="Logo">
+            <div class="text-block">
+                <span class="name">ALESSIA GALLI</span>
+                <span class="subtitle">DIGITAL PORTFOLIO</span>
+            </div>
+        </div>
+
+        <div class="navbar">
+            <a href="index.html">HOME</a>
+            <a href="index.html#artworks-section">ARTWORKS</a>
+
+            <div class="contacts-wrapper">
+                <a href="#">CONTACTS</a>
+
+                <div class="contacts-dropdown">
+                    <div class="contact-item instagram">
+                        <a class="full-link" href="https://www.instagram.com/alessiaagalli_" target="_blank">
+                            <span>Instagram</span>
+                            <img src="instagram.png" alt="Instagram">
+                        </a>
+                    </div>
+
+                    <div class="contact-item">
+                        <span>alessia.galli.006@gmail.com</span>
+                        <img src="gmail.png" alt="Gmail">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-wrapper">
+        <div class="page-title">
+            <h1>Videomaking</h1>
+            <p>
+                Una selezione di progetti video: Cortometraggi live action, motion graphics.
+            </p>
+        </div>
+    </div>
+
+   
+    <div class="video-section">
+
+       
+        <iframe 
+            src="https://www.youtube.com/embed/hKIGZnj5tjE"
+            allowfullscreen>
+        </iframe>
+
+        <div class="video-text">
+            <h2>Caso Pinocchio</h2>
+            <p>
+                Cortometraggio originale. Tema: rielaborazione della trama di "Pinocchio".
+                Realizzato per Contest NABA 2025.
+            </p>
+        </div>
+    </div>
+
+  
+    <div class="video-section">
+
+        
+        <iframe 
+            src="https://www.youtube.com/embed/reaq8Kxd8Q4"
+            allowfullscreen>
+        </iframe>
+
+        <div class="video-text">
+            <h2>Sostanza mia</h2>
+            <p>
+                Videoclip musicale in motion graphics. Tema: decontestualizzazione di una canzone.
+                "A Te" di Jovanotti dedicata ad una sostanza magica, identificata nella RedBull.
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>
+

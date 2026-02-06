@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Alessia Galli</title>
+
+   
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            background-color: #1a0000;
+            font-family: 'Poppins', sans-serif;
+            color: white;
+            overflow-x: hidden;
+        }
+
+       
+        .hero {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+        }
+
+        .center-logo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.6s ease;
+            pointer-events: auto;
+            height: 180px;
+            cursor: pointer;
+        }
+
+        .center-logo:hover {
+            opacity: 1;
+        }
+
+       
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 20px 30px;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(26, 0, 0, 0.65);
+            backdrop-filter: blur(6px);
+            box-sizing: border-box;
+        }
+
+        .left-block {
+            display: flex;
+            align-items: center;
+        }
+
+        .left-block img {
+            height: 28px;
+            margin-right: 12px;
+        }
+
+        .text-block {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+            width: 6cm;
+        }
+
+        .name {
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .subtitle {
+            font-size: 0.75rem;
+            font-weight: 300;
+            margin-top: 2px;
+        }
+
+       
+        .navbar {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .navbar > a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.75rem;
+            font-weight: 300;
+            transition: 0.2s ease;
+        }
+
+        .navbar > a:hover {
+            color: #ffcccc;
+        }
+
+        /* CONTACTS */
+        .contacts-wrapper {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .contacts-wrapper > a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.75rem;
+            font-weight: 300;
+        }
+
+        .contacts-wrapper > a:hover {
+            color: #ffcccc;
+        }
+
+        .contacts-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            padding-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            opacity: 0;
+            transform: translateY(-6px);
+            pointer-events: none;
+            transition: opacity 0.25s ease, transform 0.25s ease;
+            text-align: right;
+        }
+
+        .contacts-wrapper:hover .contacts-dropdown {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .contact-item {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            font-size: 0.75rem;
+            gap: 8px;
+        }
+
+        .contact-item img {
+            height: 14px;
+            opacity: 0.8;
+        }
+
+        .full-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .full-link:hover {
+            opacity: 0.8;
+        }
+
+      
+        .section {
+            height: 100vh;
+            padding: 40px;
+            padding-top: 120px;
+            width: 100%;
+            box-sizing: border-box;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .section .text-column {
+            width: 6cm;
+            margin-left: 40px;
+        }
+
+        .section .text-column p {
+            width: 6cm;
+            line-height: 1.5;
+            text-align: left;
+            margin-top: 10px;
+        }
+
+        .image-column {
+            display: flex;
+            align-items: center;
+        }
+
+        .image-column img {
+            width: 480px;
+            height: auto;
+            display: block;
+            border: none;
+            outline: none;
+            background: none;
+        }
+
+        
+        .three-columns {
+            height: 100vh;
+            padding: 40px;
+            padding-top: 160px;
+            width: 100%;
+            box-sizing: border-box;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .three-columns .text-column {
+            width: 6cm;
+            margin-left: 0;
+            padding: 20px;
+            border-radius: 8px;
+            transition: all 0.25s ease;
+            cursor: pointer;
+        }
+
+        .three-columns .text-column:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: scale(1.03);
+        }
+
+        .three-columns .text-column:hover h2,
+        .three-columns .text-column:hover p {
+            transform: scale(1.05);
+        }
+
+        .three-columns h2,
+        .three-columns p {
+            transition: transform 0.25s ease;
+        }
+    </style>
+</head>
+
+<body>
+
+  
+    <div class="hero">
+        <img src="logo.png" alt="Logo Centrale" class="center-logo" id="scroll-logo">
+
+      
+        <div class="header">
+            <div class="left-block">
+                <img src="logo.png" alt="Logo">
+                <div class="text-block">
+                    <span class="name">ALESSIA GALLI</span>
+                    <span class="subtitle">DIGITAL PORTFOLIO</span>
+                </div>
+            </div>
+
+            <div class="navbar">
+                <a href="index.html">HOME</a>
+                <a href="#" id="menu-artworks">ARTWORKS</a>
+
+                <div class="contacts-wrapper">
+                    <a href="#">CONTACTS</a>
+
+                    <div class="contacts-dropdown">
+                        <div class="contact-item instagram">
+                            <a class="full-link" href="https://www.instagram.com/alessiaagalli_" target="_blank">
+                                <span>Instagram</span>
+                                <img src="instagram.png" alt="Instagram">
+                            </a>
+                        </div>
+
+                        <div class="contact-item">
+                            <span>alessia.galli.006@gmail.com</span>
+                            <img src="gmail.png" alt="Gmail">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+   
+    <div class="section" id="scroll-target">
+
+        <div class="text-column">
+            <h2>Chi sono</h2>
+            <p>
+                Sono Alessia Galli, graphic designer e videomaker, studentessa di Comunicazione Visiva alla SUPSI. Trasformo idee in progetti visivi chiari, essenziali e curati nei dettagli.
+
+            </p>
+        </div>
+
+        <div class="image-column">
+            <img src="sonoio.png" alt="Immagine di presentazione">
+        </div>
+
+    </div>
+
+   
+    <div class="three-columns" id="artworks-section">
+
+        <div class="text-column" id="gd-link">
+            <h2>GRAPHIC DESIGN</h2>
+            <p>Illustrazione vettoriale, tipografia, progettazione.</p>
+        </div>
+
+        <div class="text-column" id="vm-link">
+            <h2>VIDEOMAKING</h2>
+            <p>Cortometraggi live action, motion graphics.</p>
+        </div>
+
+        <div class="text-column" id="extra-link">
+            <h2>EXTRA</h2>
+            <p>Progetti che fondono varie discipline.</p>
+        </div>
+
+    </div>
+
+    <script>
+        
+        document.getElementById("scroll-logo").addEventListener("click", function() {
+            document.getElementById("scroll-target").scrollIntoView({
+                behavior: "smooth"
+            });
+        });
+
+        document.getElementById("menu-artworks").addEventListener("click", function(event) {
+            event.preventDefault();
+            document.getElementById("artworks-section").scrollIntoView({
+                behavior: "smooth"
+            });
+        });
+
+      
+        document.getElementById("gd-link").addEventListener("click", function() {
+            window.location.href = "graphic-design.html";
+        });
+
+       
+        document.getElementById("vm-link").addEventListener("click", function() {
+            window.location.href = "videomaking.html";
+        });
+
+       
+        document.getElementById("extra-link").addEventListener("click", function() {
+            window.location.href = "extra.html";
+        });
+    </script>
+
+</body>
+</html>
+
+
+
